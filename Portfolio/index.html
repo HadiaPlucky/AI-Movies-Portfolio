@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hadia Shahid | AI Documentary & Cinematic Creator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<script>
+const navItems = document.querySelectorAll(".nav-item");
+const sections = document.querySelectorAll("section");
+
+// Function to remove active class from all nav links
+function removeActive() {
+  navItems.forEach(item => item.classList.remove("active"));
+}
+
+// Function to set active based on scroll
+function setActiveOnScroll() {
+  let scrollPos = window.scrollY + window.innerHeight / 3;
+
+  sections.forEach(section => {
+    if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+      const id = section.getAttribute("id");
+      removeActive();
+      const activeLink = document.querySelector(`.nav-item[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add("active");
+    }
+  });
+}
+
+// Listen to scroll
+window.addEventListener("scroll", setActiveOnScroll);
+
+// Also handle click to close mobile menu
+navItems.forEach(item => {
+  item.addEventListener("click", function() {
+    removeActive();
+    this.classList.add("active");
+    document.getElementById("navLinks").classList.remove("show"); // close mobile menu
+  });
+});
+</script>
+
+<body>
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <span class="logo-main">Hadia</span>
+            <span class="logo-accent">Shahid</span>
+        </div>
+
+        <!-- NAVIGATION -->
+        <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-item active">About</a></li>
+                <li><a href="#portfolio" class="nav-item">AI Projects</a></li>
+                <li><a href="#recognition" class="nav-item">National Recognition</a></li>
+                <li><a href="#contact" class="nav-item">Contact</a></li>
+            </ul>
+        </nav>
+
+        <!-- HAMBURGER -->
+        <div class="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-content">
+        <h1>AI Documentary <br>& <br>Strategic Video Creator</h1><br><br>
+        <p><strong>
+            Historical Narratives | Geopolitical Analysis | Religious Documentaries | AI Advertisements
+        </strong></p>
+        <a href="#portfolio" class="cta-btn">Explore My Work</a>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am an Undergraduate Student of Artificial Intelligence at 
+        <strong>Dawood University of Engineering and Technology</strong>.
+        My expertise lies in AI-powered documentary filmmaking,
+        national narrative storytelling, and cinematic digital production.
+    </p>
+    <p>
+        My work integrates research depth, structured scripting,
+        and advanced AI visuals to produce high-impact documentaries
+        and strategic video projects.
+    </p>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="section">
+    <h2>Featured AI Projects</h2>
+
+    <div class="video-grid">
+
+        <!-- PAHALGAM -->
+        <div class="video-card">
+            <div class="category-tag">Geopolitical AI Documentary</div>
+            <h3>Pahalgam Attack Documentary</h3>
+            <p>Analytical AI-based documentary presenting strategic insights and structured narrative evaluation.</p>
+            <button onclick="openVideo('../Videos/Pahalgam Attack - Hadia(23-AI-01).mp4')">
+                Watch Documentary
+            </button>
+        </div>
+
+        <!-- PAKISTAN MOVEMENT -->
+        <div class="video-card">
+            <div class="category-tag">Historical AI Documentary</div>
+            <h3>Pakistan Movement <br> (1857 – 1947)</h3>
+            <p>Cinematic AI documentary covering major milestones from 1857 to the creation of Pakistan in 1947.</p>
+            <button onclick="openVideo('../Videos/ Movement - Hadia(23-AI-01).mp4')">
+                Watch Documentary
+            </button>
+        </div>
+
+        <!-- PROPHET MUHAMMAD -->
+        <div class="video-card">
+            <div class="category-tag">Religious & Biographical AI Documentary</div>
+            <h3>The Life of Prophet Muhammad (P.B.U.H)</h3>
+            <p>Respectful and research-based AI documentary highlighting key events of the Prophet’s life.</p>
+            <button onclick="openVideo('../Videos/The Life of Last Prophet P.B.U.H - Hadia(23-AI-01).mp4')">
+                Watch Documentary
+            </button>
+        </div>
+
+        <!-- INDO-PAK WAR -->
+        <div class="video-card">
+            <div class="category-tag">Military History AI Documentary</div>
+            <h3>Indo-Pak War 1965</h3>
+            <p>AI-powered historical analysis covering strategic developments and national defense perspectives.</p>
+            <button onclick="openVideo('../Videos/Indo-Pak War 1965 - Hadia(23-AI-01)(1).mp4')">
+                Watch Documentary
+            </button>
+        </div>
+
+        <!-- AI ADS -->
+        <div class="video-card">
+            <div class="category-tag">Commercial AI Advertisement</div>
+            <h3>AI Advertisement Campaigns</h3>
+            <p>High-converting cinematic AI advertisements with professional scripting and visual execution.</p>
+            <button onclick="openVideo('../Videos/Branding.mp4')">
+                Watch Advertisements
+            </button>
+        </div>
+
+    </div>
+</section>
+
+<!-- NATIONAL RECOGNITION -->
+<section id="recognition" class="section recognition-section">
+    <h2>National Recognition</h2>
+
+    <div class="recognition-box">
+
+        <div class="recognition-content">
+
+            <!-- LEFT SIDE (Thumbnail) -->
+            <div class="recognition-video">
+                <img src="Screenshot_1.jpg" alt="HUM News Interview Thumbnail">
+                <button class="play-btn" onclick="openVideo('../Videos/WhatsApp Video 2026-02-22 at 1.15.13 AM.mp4')">
+                    ▶ Watch Interview
+                </button>
+            </div>
+
+            <!-- RIGHT SIDE (Text) -->
+            <div class="recognition-text">
+                <h3>Featured on National Television – HUM News Interview</h3>
+
+                <p>
+                    Following the national impact of my Pahalgam Attack Documentary,
+                    I was officially invited for an interview on HUM News,
+                    one of Pakistan’s leading national television networks.
+                </p>
+
+                <p>During the televised interview, I discussed:</p>
+
+                <ul>
+                    <li>The research framework behind the documentary</li>
+                    <li>Use of Artificial Intelligence in investigative storytelling</li>
+                    <li>Strategic narrative construction</li>
+                    <li>The broader geopolitical implications of the project</li>
+                </ul>
+
+                <p class="highlight">
+                    This appearance marked a significant milestone — national-level recognition
+                    of my AI documentary work while still an undergraduate student.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+    <h2>Collaborate With Me</h2>
+    <p>
+        Available for AI documentaries, historical narratives,
+        strategic analysis projects, and commercial AI advertisements.
+    </p>
+    <p><strong>Email: hadia.plucky@gmail.com</strong></p>
+</section>
+
+<footer>
+    <p>© 2026 Hadia Shahid | AI Documentary & Cinematic Creator</p>
+</footer>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="video-modal">
+    <span class="close-btn" onclick="closeVideo()">×</span>
+    <iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<script>
+function openVideo(videoURL) {
+    document.getElementById("videoModal").style.display = "flex";
+    document.getElementById("videoFrame").src = videoURL + "?autoplay=1";
+}
+
+function closeVideo() {
+    document.getElementById("videoModal").style.display = "none";
+    document.getElementById("videoFrame").src = "";
+}
+</script>
+
+</body>
+</html>
